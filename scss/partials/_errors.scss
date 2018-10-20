@@ -1,12 +1,16 @@
 .overlay { // Covers page upon error
     position: absolute;
     z-index: 200;
-    background: lightblue;
+    background: white;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     display: none;
+}
+
+body.error .overlay { // Display upon error thrown
+    display: block;
 }
 
 // Creating container for body error message
