@@ -50,25 +50,26 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
   display: inline !important; }
 
 #title-container {
-  text-align: center;
-  height: 150px; }
+  text-align: center; }
   #title-container #header-title {
-    margin: 60px auto -20px; }
+    margin: 60px auto 0; }
+  #title-container #header-subtitle {
+    margin: 0 auto; }
   #title-container #header-quote {
-    margin: 0px auto 50px; }
+    margin: 30px auto 0; }
 
 #post-challenge {
   width: 400px;
-  margin: 0 auto;
+  margin: 80px auto 0;
   text-align: center; }
   #post-challenge .user-input {
     margin: 15px; }
   #post-challenge #submit-container {
-    margin: 30px; }
+    margin-top: 25px; }
 
 #search-challenge {
   width: 400px;
-  margin: 0 auto;
+  margin: 80px auto 0px;
   text-align: center; }
   #search-challenge #search-results-container #searching-blockchain p {
     color: grey;
@@ -111,6 +112,7 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
           text-decoration: none;
           color: black; }
         #search-challenge #log-container .single-log-container .title-span .tooltiptext {
+          white-space: pre;
           font-size: .8em;
           visibility: hidden;
           bottom: 105%;
@@ -131,6 +133,7 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
         margin: -5px 15px 0px;
         position: relative; }
         #search-challenge #log-container .single-log-container .icon .tooltiptext {
+          white-space: pre;
           font-size: .8em;
           visibility: hidden;
           bottom: 105%;
@@ -169,11 +172,18 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
 
 footer {
   margin-top: 60px;
-  height: 30px;
-  margin: 60px;
+  margin-bottom: 50px;
   text-align: center; }
-  footer a {
-    text-decoration: none;
-    color: grey; }
+  footer #about-container {
+    margin: 10px auto; }
+    footer #about-container a {
+      font-size: .9em;
+      text-decoration: none;
+      color: black; }
+  footer #copyright-container {
+    margin-top: 80px; }
+    footer #copyright-container a {
+      text-decoration: none;
+      color: grey; }
 
 /*# sourceMappingURL=style.css.map */

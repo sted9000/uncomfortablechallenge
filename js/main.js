@@ -16,17 +16,27 @@ function postChallenge() {
     // format user inputs
     var category = $("#user-category")[0].value; // category
     var description = $('#user-description')[0].value; // description
-    var result = $('#user-location')[0].value; // result
+    var raw_location = $('#user-location')[0].value; // result
+
+    // check the result string format
+    if (raw_location.startsWith('www.')) {
+        var location = raw_location.slice(4);
+        console.log(location);
+    } else if (raw_location.startsWith('https://')) {
+        var location = raw_location.slice(8);
+        console.log(location);
+    } else if (raw_location.startsWith('http://')) {
+        var location = raw_location.slice(7);
+        console.log(location);
+    } else {
+        alert("Your result's location must start with www., http://, or https://");
+        return;
+    }
+
 
     // check to make sure user has input
     if (category == "" || description == "" || result == "") {
         alert("Your you must input a value for each field");
-        return;
-    }
-
-    // check the result string format
-    if (result.startsWith('www.') == false) {
-        alert("Your result's location must start with www.");
         return;
     }
 
@@ -150,13 +160,19 @@ function displayLogs() {
             if (description.length >= 25) {
                 $('#' + transHash + ' ' + '.title-span').append( // a tag pointing to users site
                     '<a href=' + "http://" + result + ' ' + 'target="_blank">' + description.slice(0,25) + '...</a>');
+
+            } else if (description.startsWith('10 minute french')) { // Mica exception
+                $('#' + transHash + ' ' + '.title-span').append( // a tag pointing to users site
+                    '<a href=' + result + ' ' +'target="_blank">' + description + '</a>');
+                    console.log('micas');
+
             } else {
                 $('#' + transHash + ' ' + '.title-span').append( // a tag pointing to users site
-                    '<a href=' + "http://" + result + ' ' + 'target="_blank">' + description + '</a>');
+                '<a href=' + "http://" + result + ' ' + 'target="_blank">' + description + '</a>');
             }
 
             $('#' + transHash + ' ' + '.title-span').append( // tooltip
-                '<div class="tooltiptext">Click to go to posters page to see challenge details and results</div>'); // Tool tip
+                '<div class="tooltiptext">Description:\n' + description + '\n' + '\n' + 'Click to go to posters page to see challenge details and results' + '</div>'); // Tool tip
 
 
             $('<span/>', { // date span
@@ -186,7 +202,7 @@ function displayLogs() {
                 '<img id="poster_image" src="/uncomfortablechallenge/images/poster.png" />');
 
             $('#' + transHash + ' ' + '#poster-span').append( // tooltip
-                '<div class="tooltiptext">Poster: ' + poster + '\n' + 'Click to see account details' + '</div>');
+                '<div class="tooltiptext">Poster:\n' + poster + '\n\n' + 'Click to see account details' + '</div>');
 
 
             $('<span/>', { // category span

@@ -1,11 +1,24 @@
 footer {
     margin-top: 60px;
-    height: 30px;
-    margin: 60px;
+    margin-bottom: 50px;
     text-align: center;
 
-    a {
-        text-decoration: none;
-        color: grey;
+    #about-container {
+        margin: 10px auto;
+
+        a {
+            font-size: .9em;
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+    #copyright-container {
+        margin-top: 80px;
+
+        a {
+            text-decoration: none;
+            color: grey;
+        }
     }
 }

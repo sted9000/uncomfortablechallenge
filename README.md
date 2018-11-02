@@ -5,14 +5,14 @@ A platform for posting uncomfortable challenges to ethereum blockchain event log
 For friends an I (and you) to publicly push ourselves into more uncomfortable situations.
 
 ### What is an Uncomfortable Challenge?
-- It is the posting of a something you find uncomfortable on the the ethereum blockchain.
+- It is the posting of a something you find uncomfortable on the ethereum blockchain.
 - Along with your plan and or results facing this discomfort.
 - The record will be publicly available, timestamped, verifiable, and unalterable.
 
 ### What is an example of an Uncomfortable Challenge?
-- Ex: I am going to complement my salsa partner, though it feels uncomfortable and could be awkward.
+- Ex: I am going to complement my salsa partner tomorrow, though it feels uncomfortable and could be awkward.
 - Ex: I will meditate for 15 minutes every day this week, though it makes my anxious to be with my thoughts.  
-- [Read the first uncomfortable challenge](www.tedslocum.com/croissant)
+- [Read the first uncomfortable challenge](http://tedslocum.com/croissant)
 
 ### Why post an Uncomfortable Challenge?
 - Get more motivation to accomplish your goal

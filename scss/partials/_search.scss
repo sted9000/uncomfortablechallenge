@@ -1,7 +1,7 @@
 
 #search-challenge {
     width: 400px;
-    margin: 0 auto;
+    margin: 80px auto 0px;
     text-align: center;
 
     #search-results-container {
@@ -60,6 +60,7 @@
                 }
 
                 .tooltiptext {
+                    white-space: pre;
                     font-size: .8em;
                     visibility: hidden;
                     bottom: 105%;
@@ -92,6 +93,7 @@
                 position: relative;
 
                 .tooltiptext {
+                    white-space: pre;
                     font-size: .8em;
                     visibility: hidden;
                     bottom: 105%;

@@ -1,13 +1,15 @@
 #title-container {
-
     text-align: center;
-    height: 150px;
 
     #header-title {
-        margin: 60px auto -20px;
+        margin: 60px auto 0;
+    }
+
+    #header-subtitle {
+        margin: 0 auto;
     }
 
     #header-quote {
-        margin: 0px auto 50px;
+        margin: 30px auto 0;
     }
 }
