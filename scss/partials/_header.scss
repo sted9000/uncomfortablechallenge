@@ -1,8 +1,87 @@
+.hamburger {
+    background:none;
+    position:absolute;
+    top:0;
+    right:0;
+    line-height:45px;
+    padding:5px 15px 0px 15px;
+    color: black;
+    border:0;
+    font-size:1.4em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:1;
+}
+
+.cross {
+    display: none;
+    background:none;
+    position:absolute;
+    top:0px;
+    right:0;
+    padding:7px 15px 0px 15px;
+    color:black;
+    border:0;
+    font-size:3em;
+    line-height:65px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:1;
+}
+
+.nav-menu {
+    z-index:1;
+    font-weight:bold;
+    font-size:0.8em;
+    width:100%;
+    background:#f1f1f1;
+    position:absolute;
+    top: 0px;
+    right: 40px;
+    width: 150px;
+    text-align:center;
+    display: none;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        list-style-image: none;
+
+
+        li {
+            display: block;
+            padding:15px 0 15px 0;
+            // border-bottom:#dddddd 1px solid;
+
+            &:hover {
+                display: block;
+                background:#ffffff;
+                padding:15px 0 15px 0;
+                // border-bottom:#dddddd 1px solid;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
 #title-container {
     text-align: center;
 
     #header-title {
-        margin: 60px auto 0;
+        margin: 50px auto 0;
     }
 
     #header-subtitle {
@@ -10,6 +89,6 @@
     }
 
     #header-quote {
-        margin: 30px auto 0;
+        margin: 25px auto 0;
     }
 }
