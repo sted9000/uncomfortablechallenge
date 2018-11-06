@@ -26,22 +26,18 @@
 
     <!-- Site header  -->
     <header id="site-header">
-        <button class="hamburger">&#9776;</button>
-        <button class="cross">&#735;</button>
-        <script type="text/javascript">
-            $(".hamburger").click(function() {
-                hamburgerButton();
-            });
 
-            $(".cross").click(function() {
-                crossButton();
-            });
-        </script>
+        <!-- Header text -->
         <div id="title-container">
             <h1 id="header-title">Uncomfortable Challenge</h1>
             <h4 id="header-subtitle">(Ethereum Blockchain Style)</h4>
             <h5 id="header-quote">&quotFor life to be really fun, what you fear should line up with what you desire.&quot - NN Taleb</h5>
         </div>
+
+        <!-- Nav menu -->
+        <button class="hamburger">&#9776;</button>
+        <button class="cross">&#735;</button>
+
         <div class="nav-menu">
             <ul>
                 <a href="https://sted9000.github.io/uncomfortablechallenge/html/hiw.html" target="_blank"><li>How It Works</li></a>
@@ -50,6 +46,16 @@
                 <a href="https://tedslocum.com/contact.html" target="_blank"><li>Contact</li></a>
             </ul>
         </div>
+
+        <!-- Call js upon nav click -->
+        <script type="text/javascript">
+            $(".hamburger").click(function() {
+                hamburgerButton();
+            });
+            $(".cross").click(function() {
+                crossButton();
+            });
+        </script>
     </header>
 
 
