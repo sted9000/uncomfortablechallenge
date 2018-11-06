@@ -184,7 +184,11 @@ function displayLogs() {
                 '<a id=' + logs_array_all[j].blockHash + ' onclick="alertDate(this)"></a>');
 
             $('#' + transHash + ' ' + '#date-span a').append( // image
+<<<<<<< HEAD
                 '<img id="result_image" src="../images/calendar.png" />');
+=======
+                '<img id="result_image" src="/uncomfortablechallenge/images/calendar.png" />');
+>>>>>>> ccd2955b28d5d482840ff4bd87f80f739ccc02de
 
             $('#' + transHash + ' ' + '#date-span').append( // tooltip
                 '<div class="tooltiptext">Click to see date posted</div>');
@@ -199,7 +203,11 @@ function displayLogs() {
                 '<a href=' + "http://www.etherscan.io/address/" + poster + ' target="_blank"></a>');
 
             $('#' + transHash + ' ' + '#poster-span a').append( // image
+<<<<<<< HEAD
                 '<img id="poster_image" src="../images/poster.png" />');
+=======
+                '<img id="poster_image" src="/uncomfortablechallenge/images/poster.png" />');
+>>>>>>> ccd2955b28d5d482840ff4bd87f80f739ccc02de
 
             $('#' + transHash + ' ' + '#poster-span').append( // tooltip
                 '<div class="tooltiptext">Poster:\n' + poster + '\n\n' + 'Click to see account details' + '</div>');
@@ -211,7 +219,11 @@ function displayLogs() {
             }).appendTo('#' + transHash)
 
             $('#' + transHash + ' ' + '#category-span').append( // image
+<<<<<<< HEAD
                 '<img id="category_image" src="../images/file.png"" />');
+=======
+                '<img id="category_image" src="/uncomfortablechallenge/images/file.png"" />');
+>>>>>>> ccd2955b28d5d482840ff4bd87f80f739ccc02de
 
             $('#' + transHash + ' ' + '#category-span').append( // tooltip
                 '<div class="tooltiptext">' + 'Category: ' + category_text + '</div>');
