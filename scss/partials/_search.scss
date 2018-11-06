@@ -1,8 +1,13 @@
 
 #search-challenge {
     width: 400px;
-    margin: 80px auto 0px;
+    margin: 75px auto 0px;
     text-align: center;
+
+    #search-title {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
 
     #search-results-container {
 
@@ -29,7 +34,7 @@
 
     #log-container {
         max-width: 1000px;
-        padding: 20px;
+        padding: 20px 20px 10px 20px ;
         box-shadow: 1px 1px 10px rgba(0,0,0,.2);
         margin: 0px auto 10px;
         background-color: #fff;

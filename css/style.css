@@ -49,28 +49,93 @@ body.error-no-metamask-accounts div.error-bar span.error-label.no-metamask-accou
 body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin {
   display: inline !important; }
 
+.hamburger {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 45px;
+  padding: 5px 15px 0px 15px;
+  color: black;
+  border: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 1; }
+
+.cross {
+  display: none;
+  background: none;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  padding: 7px 15px 0px 15px;
+  color: black;
+  border: 0;
+  font-size: 3em;
+  line-height: 65px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 1; }
+
+.nav-menu {
+  z-index: 1;
+  font-weight: bold;
+  font-size: 0.8em;
+  width: 100%;
+  background: #f1f1f1;
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  width: 150px;
+  text-align: center;
+  display: none; }
+  .nav-menu a {
+    text-decoration: none;
+    color: black; }
+  .nav-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none; }
+    .nav-menu ul li {
+      display: block;
+      padding: 15px 0 15px 0; }
+      .nav-menu ul li:hover {
+        display: block;
+        background: #ffffff;
+        padding: 15px 0 15px 0; }
+
 #title-container {
   text-align: center; }
   #title-container #header-title {
-    margin: 60px auto 0; }
+    margin: 50px auto 0; }
   #title-container #header-subtitle {
     margin: 0 auto; }
   #title-container #header-quote {
-    margin: 30px auto 0; }
+    margin: 25px auto 0; }
 
 #post-challenge {
   width: 400px;
-  margin: 80px auto 0;
+  margin: 75px auto 0;
   text-align: center; }
+  #post-challenge #post-title {
+    margin-top: 0;
+    margin-bottom: 10px; }
   #post-challenge .user-input {
     margin: 15px; }
   #post-challenge #submit-container {
-    margin-top: 25px; }
+    margin-top: 15px; }
 
 #search-challenge {
   width: 400px;
-  margin: 80px auto 0px;
+  margin: 75px auto 0px;
   text-align: center; }
+  #search-challenge #search-title {
+    margin-top: 0;
+    margin-bottom: 10px; }
   #search-challenge #search-results-container #searching-blockchain p {
     color: grey;
     font-size: 0.8em; }
@@ -86,7 +151,7 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
     animation: spin 2s linear infinite; }
   #search-challenge #log-container {
     max-width: 1000px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
     margin: 0px auto 10px;
     background-color: #fff;
@@ -171,7 +236,7 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
   margin: 0 auto; }
 
 footer {
-  margin-top: 60px;
+  margin-top: 50px;
   margin-bottom: 50px;
   text-align: center; }
   footer #about-container {
@@ -181,7 +246,7 @@ footer {
       text-decoration: none;
       color: black; }
   footer #copyright-container {
-    margin-top: 80px; }
+    margin-top: 50px; }
     footer #copyright-container a {
       text-decoration: none;
       color: grey; }
