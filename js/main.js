@@ -42,7 +42,7 @@ function postChallenge() {
 
     // web3 transaction
     factoryInstance.newChallenge.sendTransaction(
-        category, description, result.slice(4), function(err, txHash){
+        category, description, location, function(err, txHash){
         if(!err) {
 
             // give user the transaction hash
