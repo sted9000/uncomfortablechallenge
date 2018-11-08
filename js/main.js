@@ -35,7 +35,7 @@ function postChallenge() {
 
 
     // check to make sure user has input
-    if (category == "" || description == "" || result == "") {
+    if (category == "" || description == "" || raw_location == "") {
         alert("Your you must input a value for each field");
         return;
     }
