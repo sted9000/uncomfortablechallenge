@@ -1,27 +1,55 @@
-// Find connection; else throw error
-window.addEventListener('load', function() {
+window.addEventListener('load', async () => {
 
-  // First
-  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-  if (typeof web3 === 'undefined') {
+    // First see you browser has a web3 injection
+    if (typeof web3 === 'undefined') {
 
-    // Throw error
-    $('body').addClass('error-no-metamask-plugin').addClass('error');
+        // If not throw error
+        $('body').addClass('error-no-metamask-plugin').addClass('error');
 
-  } else {
-      // Use Mist/MetaMask's provider
-      console.log('Web3 provider found');
-      web3 = new Web3(web3.currentProvider);
-  }
+    // If yes get the account access
+    } else {
 
-    // Second
+        // Modern dapp browsers...
+        if (window.ethereum) {
+            window.web3 = new Web3(ethereum);
+            try {
+                // Request account access if needed
+                await ethereum.enable();
+
+                checkNetwork();
+
+            } catch (error) {
+                // throw err message
+                $('body').addClass('error-no-account-access').addClass('error');
+            }
+
+
+
+        // Legacy dapp browsers...
+        } else if (window.web3) {
+            window.web3 = new Web3(web3.currentProvider);
+
+            // Call network check
+            checkNetwork();
+        }
+
+        // Non-dapp browsers... (no metamask plugin)
+        else {
+            $('body').addClass('error-no-metamask-plugin').addClass('error');
+        }
+    }
+});
+
+function checkNetwork() {
+
     // Network check; else throw error
     web3.version.getNetwork((err, netId) => {
 
       switch (netId) {
         case "1":
           console.log('This is mainnet');
-          // Not throw error message and screen
+          // Case account check
+          accountCheck();
           break
         case "2":
           console.log('This is the deprecated Morden test network.');
@@ -43,38 +71,45 @@ window.addEventListener('load', function() {
           console.log('This is an unknown network.');
           $('body').addClass('error-invalid-network').addClass('error');
       }
+  });
+}
 
-       // Third
-       // User has an account
-       web3.eth.getAccounts((err, acc) => {
-           if (!err) {
+function accountCheck() {
+    window.web3.eth.getAccounts((err, acc) => {
 
-               if (acc.length <= 0) {
-                   $('body').addClass('error-no-metamask-accounts').addClass('error');
-               } else {
-                   web3.eth.defaultAccount = web3.eth.accounts[0];
-                   console.log("Active account: " + web3.eth.defaultAccount);
+        if (!err) {
+            console.log('here in accountcheck');
 
-                   // get lastest block
-                   web3.eth.getBlockNumber(function(err, block) {
+            if (acc.length <= 0) {
+                $('body').addClass('error-no-metamask-accounts').addClass('error');
 
-                       end_block = block;
+            } else {
+                web3.eth.defaultAccount = web3.eth.accounts[0];
+                console.log("Active account: " + web3.eth.defaultAccount);
+                // Call set abi
+                getLastestBlock();
+            }
 
-                       getEvents();
-                       console.log('here is web3-start');
-                   })
-
-
-               }
-
+       } else {
+          // Terribly wrong error message
+       }
+   });
+}
 
 
-         } else {
-             console.error(err);
-         }
-     });
+function getLastestBlock() {
+
+    // get lastest block
+    web3.eth.getBlockNumber(function(err, block) {
+
+        console.log("Current Block Number: " + block);
+        end_block = block;
+
+        getEvents();
+        console.log('web3_starter.js complete');
     });
-});
+}
+
 
 // Factory abi
 var factoryABI = web3.eth.contract([

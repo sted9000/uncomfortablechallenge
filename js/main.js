@@ -157,16 +157,13 @@ function displayLogs() {
                 class: 'title-span',
             }).appendTo('#' + transHash);
 
-            if (description.length >= 25) {
-                $('#' + transHash + ' ' + '.title-span').append( // a tag pointing to users site
-                    '<a href=' + "http://" + result + ' ' + 'target="_blank">' + description.slice(0,25) + '...</a>');
-
-            } else if (description.startsWith('10 minute french')) { // Mica exception
+            if (description.startsWith('10 minute french')) { // Mica exception
                 $('#' + transHash + ' ' + '.title-span').append( // a tag pointing to users site
                     '<a href=' + result + ' ' +'target="_blank">' + description + '</a>');
                     console.log('micas');
+            }
 
-            } else {
+            else {
                 $('#' + transHash + ' ' + '.title-span').append( // a tag pointing to users site
                 '<a href=' + "http://" + result + ' ' + 'target="_blank">' + description + '</a>');
             }
