@@ -1,0 +1,40 @@
+// Note this set-up of (html, body + content-outside + content-inside
+// ... are used to set the 'sticky footer')
+
+html, body {
+font-family: 'Merriweather', serif;
+  height: 100%;
+  margin: 0;
+}
+
+.content-outside {
+  min-height: 100%;
+}
+.content-inside {
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+// Defaults
+.clear-float-div {
+    clear: both;
+}
+
+// varibles
+$grey-btn: #d9d9d9;
+// other colors used are 'black', 'white', and 'gray'
+
+@mixin tooltiptext {
+    white-space: pre;
+    font-size: .8em;
+    visibility: hidden;
+    bottom: 105%;
+    background-color: white;
+    border-radius: 6px;
+    border-width: medium;
+    border-style: solid;
+    border-color: black;
+    margin-left: 0px;
+    padding: 10px;
+    position: absolute; /* Position the tooltip ***Important***/
+}

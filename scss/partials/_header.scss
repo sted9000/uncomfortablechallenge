@@ -1,3 +1,21 @@
+// Header .........................................
+#title-container {
+    text-align: center;
+
+    #header-title {
+        margin: 50px auto 0;
+    }
+
+    #header-subtitle {
+        margin: 0 auto;
+    }
+
+    #header-quote {
+        margin: 25px auto 0;
+    }
+}
+
+// Nav mene ........................................
 .hamburger {
     background:none;
     position:absolute;
@@ -68,27 +86,5 @@
                 // border-bottom:#dddddd 1px solid;
             }
         }
-    }
-}
-
-
-
-
-
-
-
-#title-container {
-    text-align: center;
-
-    #header-title {
-        margin: 50px auto 0;
-    }
-
-    #header-subtitle {
-        margin: 0 auto;
-    }
-
-    #header-quote {
-        margin: 25px auto 0;
     }
 }

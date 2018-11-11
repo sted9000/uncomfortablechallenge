@@ -1,3 +1,18 @@
+html, body {
+  font-family: 'Merriweather', serif;
+  height: 100%;
+  margin: 0; }
+
+.content-outside {
+  min-height: 100%; }
+
+.content-inside {
+  padding: 20px;
+  padding-bottom: 100px; }
+
+.clear-float-div {
+  clear: both; }
+
 .overlay {
   position: absolute;
   z-index: 200;
@@ -40,6 +55,9 @@ span.error-label.no-metamask-accounts {
 span.error-label.no-metamask-plugin {
   display: none; }
 
+span.error-label.no-account-access {
+  display: none; }
+
 body.error-invalid-network div.error-bar span.error-label.invalid-network {
   display: inline !important; }
 
@@ -48,6 +66,18 @@ body.error-no-metamask-accounts div.error-bar span.error-label.no-metamask-accou
 
 body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin {
   display: inline !important; }
+
+body.error-no-account-access div.error-bar span.error-label.no-account-access {
+  display: inline !important; }
+
+#title-container {
+  text-align: center; }
+  #title-container #header-title {
+    margin: 50px auto 0; }
+  #title-container #header-subtitle {
+    margin: 0 auto; }
+  #title-container #header-quote {
+    margin: 25px auto 0; }
 
 .hamburger {
   background: none;
@@ -108,26 +138,81 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
         background: #ffffff;
         padding: 15px 0 15px 0; }
 
-#title-container {
-  text-align: center; }
-  #title-container #header-title {
-    margin: 50px auto 0; }
-  #title-container #header-subtitle {
-    margin: 0 auto; }
-  #title-container #header-quote {
-    margin: 25px auto 0; }
+#content {
+  margin-top: 75px; }
 
-#post-challenge {
-  width: 400px;
-  margin: 75px auto 0;
-  text-align: center; }
-  #post-challenge #post-title {
-    margin-top: 0;
-    margin-bottom: 10px; }
-  #post-challenge .user-input {
-    margin: 15px; }
-  #post-challenge #submit-container {
-    margin-top: 15px; }
+button {
+  font-family: 'Merriweather', serif;
+  cursor: pointer;
+  border-radius: 2em; }
+  button:focus {
+    outline: 0; }
+
+.dropdown-container {
+  text-align: center;
+  margin-top: 10px; }
+  .dropdown-container .dropdown-button {
+    width: 400px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em; }
+    .dropdown-container .dropdown-button:hover {
+      background-color: white;
+      color: black; }
+  .dropdown-container .dropdown-content-container {
+    display: none;
+    max-width: 400px;
+    margin: 5px auto 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1em; }
+    .dropdown-container .dropdown-content-container p {
+      padding: 10px;
+      margin: 0px; }
+    .dropdown-container .dropdown-content-container .float-button {
+      background-color: #d9d9d9;
+      color: black;
+      padding: 10px;
+      border-radius: 1em;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      border-width: 0;
+      float: left;
+      width: 45%;
+      margin: 2.5%; }
+      .dropdown-container .dropdown-content-container .float-button:hover {
+        background-color: white;
+        color: black; }
+
+#post-challenge fantom-padding {
+  padding: 5px; }
+#post-challenge #post-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding: 0; }
+#post-challenge .user-input {
+  margin: 10px; }
+#post-challenge #user-category {
+  padding: .3em;
+  border-radius: 1em;
+  border-width: 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #d9d9d9;
+  font-family: 'Merriweather', serif; }
+  #post-challenge #user-category:focus {
+    outline: 0; }
+#post-challenge #submit-container button {
+  margin: 2.5%;
+  padding: .8em;
+  border-radius: 1em;
+  border-width: 0;
+  width: 95%;
+  background-color: #d9d9d9;
+  color: black;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
+  #post-challenge #submit-container button:hover {
+    background-color: white; }
 
 #search-challenge {
   width: 400px;
@@ -151,11 +236,12 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
     animation: spin 2s linear infinite; }
   #search-challenge #log-container {
     max-width: 1000px;
-    padding: 20px 20px 10px 20px;
+    padding: 10px 20px 10px 20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
     margin: 0px auto 10px;
     background-color: #fff;
-    display: none; }
+    display: none;
+    border-radius: 1em; }
     #search-challenge #log-container .single-log-container {
       width: 100%;
       margin: 10px auto 0;
@@ -167,15 +253,17 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
       line-height: 1.15; }
       #search-challenge #log-container .single-log-container .title-span {
         position: relative;
-        float: left;
-        margin-right: 0em;
-        display: inline-block;
-        max-width: 70%;
-        font-size: 1em;
         margin-bottom: 10px; }
         #search-challenge #log-container .single-log-container .title-span a {
+          text-align: left;
+          color: black;
+          width: 190px;
+          display: inline-block;
+          float: left;
           text-decoration: none;
-          color: black; }
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
         #search-challenge #log-container .single-log-container .title-span .tooltiptext {
           white-space: pre;
           font-size: .8em;
@@ -188,9 +276,8 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
           border-color: black;
           margin-left: 0px;
           padding: 10px;
-          /* Position the tooltip */
           position: absolute;
-          z-index: 1; }
+          /* Position the tooltip ***Important***/ }
         #search-challenge #log-container .single-log-container .title-span:hover .tooltiptext {
           visibility: visible; }
       #search-challenge #log-container .single-log-container .icon {
@@ -209,9 +296,8 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
           border-color: black;
           margin-left: 0px;
           padding: 10px;
-          /* Position the tooltip */
           position: absolute;
-          z-index: 1; }
+          /* Position the tooltip ***Important***/ }
         #search-challenge #log-container .single-log-container .icon:hover .tooltiptext {
           visibility: visible; }
 
@@ -236,19 +322,11 @@ body.error-no-metamask-plugin div.error-bar span.error-label.no-metamask-plugin 
   margin: 0 auto; }
 
 footer {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  height: 50px;
+  margin-top: -50px;
   text-align: center; }
-  footer #about-container {
-    margin: 10px auto; }
-    footer #about-container a {
-      font-size: .9em;
-      text-decoration: none;
-      color: black; }
-  footer #copyright-container {
-    margin-top: 50px; }
-    footer #copyright-container a {
-      text-decoration: none;
-      color: grey; }
+  footer a {
+    text-decoration: none;
+    color: grey; }
 
 /*# sourceMappingURL=style.css.map */
