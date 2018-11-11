@@ -1,0 +1,236 @@
+// Container for site content .......................
+#content {
+	margin-top: 75px;
+}
+
+// Default button format ...........................
+button {
+    font-family: 'Merriweather', serif;
+    cursor: pointer;
+    border-radius: 2em;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+// Intro and Post dropdown section ................
+.dropdown-container {
+	text-align: center;
+    margin-top: 10px;
+
+    .dropdown-button {
+        width: 400px;
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 15px 25px;
+        box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+        font-size: 1.1em;
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+
+    .dropdown-content-container {
+        display: none;
+        max-width: 400px;
+        margin: 5px auto 5px;
+        box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+        border-radius: 1em;
+
+        p {
+            padding: 10px;
+            margin: 0px;
+        }
+
+        .float-button {
+            background-color: $grey-btn;
+            color: black;
+            padding: 10px;
+            border-radius: 1em;
+            box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+            border-width: 0;
+            float: left;
+            width: 45%;
+            margin: 2.5%;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}
+
+// Modifications for post container
+#post-challenge {
+    fantom-padding {
+        padding: 5px;
+    }
+
+    #post-title {
+        margin-top: 0;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+
+    .user-input {
+        margin: 10px;
+    }
+
+    #user-category {
+        padding: .3em;
+        border-radius: 1em;
+        border-width: 0;
+        box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+        background-color: $grey-btn;
+        font-family: 'Merriweather', serif;
+
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+      #submit-container button {
+
+          margin: 2.5%;
+          padding: .8em;
+          border-radius: 1em;
+          border-width: 0;
+          width: 95%;
+          background-color: $grey-btn;
+          color: black;
+          box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+
+          &:hover {
+              background-color: white;
+          }
+    }
+}
+
+// Search Container .....................................
+#search-challenge {
+    width: 400px;
+    margin: 75px auto 0px;
+    text-align: center;
+
+    #search-title {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    #search-results-container {
+
+        #searching-blockchain {
+
+            p {
+            color: grey;
+            font-size: 0.8em;
+            }
+
+            #spinner {
+                margin: -10px auto 0;
+                border: 6px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 6px solid gray;
+                width: 20px;
+                height: 20px;
+                -webkit-animation: spin 2s linear infinite; /* Safari */
+                animation: spin 2s linear infinite;
+            }
+        }
+        //box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+    }
+
+    #log-container {
+        max-width: 1000px;
+        padding: 10px 20px 10px 20px ;
+        box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+        margin: 0px auto 10px;
+        background-color: #fff;
+        display: none;
+        border-radius: 1em;
+
+        .single-log-container {
+            width: 100%;
+            margin: 10px auto 0;
+            padding: 0px 0 20px;
+            border-bottom: solid 1px #d9dde0;
+            display: block;
+            font-size: 16px; // should be inherited from body
+            font-weight: 400; // should be inherited from body
+            line-height: 1.15; // should be inherited from html
+
+            .title-span {
+                position: relative;
+                margin-bottom: 10px;
+
+
+                a {
+                    text-align: left;
+                    color: black;
+                    width: 190px;
+                    display: inline-block;
+                    float: left;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .tooltiptext {
+                    @include tooltiptext;
+                }
+
+                &:hover .tooltiptext {
+                    visibility: visible;
+                }
+            }
+
+            .icon {
+                float: right;
+                margin: -5px 15px 0px;
+                position: relative;
+
+                .tooltiptext {
+                    @include tooltiptext;
+                }
+
+                &:hover .tooltiptext{
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+
+// Search messages ..................................
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#no-more-results-category {
+    text-align: center;
+    margin-top: -10px;
+    color: #999;
+    display: none;
+}
+
+// Load-more
+#loadmore-button {
+    text-align: center;
+    cursor: pointer;
+    display: none;
+
+}
+
+#loadmore-text {
+    display: block;
+    margin: 0 auto;
+}

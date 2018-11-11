@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Uncomfortable Challenge</title>
+    <meta name="description" content="UncomfortableChallenge">
+     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../scripts/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/web3.min.js"></script>
+    <script src="../js/web3_starter.js"></script>
+    <script src="../js/main.js"></script>
+</head>
+
+<body>
+    <!-- Error for MetaMask detection  -->
+    <div class="content-outside">
+        <div class="content-inside">
+            <div class="overlay"></div>
+            <div class="error-bar">
+                <span class="error-label no-metamask-plugin">You need to <a href="https://metamask.io">install the MetaMask plugin</a></span>
+                <span class="error-label no-metamask-accounts">No accounts found. Please make sure MetaMask is unlocked then refresh the page.</span>
+                <span class="error-label invalid-network">Invalid network. Please switch to the Main network.</span>
+                <span class="error-label no-account-access">Please (we need to see your account address). This is only giving us access to your address, nothing too sensitive. Please refresh and connect.</span>
+            </div>
+
+            <!-- Site header  -->
+            <header id="site-header">
+                <button class="hamburger">&#9776;</button>
+                <button class="cross">&#735;</button>
+                <script type="text/javascript">
+                    $(".hamburger").click(function() {
+                        hamburgerButton();
+                    });
+                    $(".cross").click(function() {
+                        crossButton();
+                    });
+                </script>
+                <div id="title-container">
+                    <h1 id="header-title">Uncomfortable Challenge</h1>
+                    <h4 id="header-subtitle">(Ethereum Blockchain Style)</h4>
+                    <h5 id="header-quote">&quotFor life to be really fun, what you fear should line up with what you desire.&quot - NN Taleb</h5>
+                </div>
+                <div class="nav-menu">
+                    <ul>
+                        <a href="https://sted9000.github.io/uncomfortablechallenge/html/hiw.html" target="_blank"><li>How It Works</li></a>
+                        <a href="https://freeroll.io" target="_blank"><li>Open Freeroll Project</li></a>
+                        <a href="https://github.com/sted9000/uncomfortablechallenge/" target="_blank"><li>Documentation</li></a>
+                        <a href="https://tedslocum.com/contact.html" target="_blank"><li>Contact</li></a>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Pages main content (post and search) -->
+            <div id="content">
+
+                <div class="dropdown-container">
+
+                    <div class="button-container">
+                        <button class="dropdown-button" id="intro-button">Short Introduction</button>
+                    </div>
+
+                    <div class="dropdown-content-container" id="intro-text-container">
+                        <p>
+                            An Uncomfortable Challenge is a voluntarily exploration of something that brings you discomfort.<br /><br />
+                            The idea is that both naming and declaring intentions are important steps in the process leading towards understanding discomfort.<br /><br />
+                            Below view other's challenges or post something that brings you discomfort, track your results, and see what your learn.<br />
+                        </p>
+                        <a href="https://docs.google.com/document/d/1LC4iEhv-UvId96dd5hIZqdwVwjt9yxU2jxpmKqH4kfA/edit?usp=sharing"><button id="read-more-button" class="float-button">Read More</button></a>
+                        <a href="https://docs.google.com/document/d/1LC4iEhv-UvId96dd5hIZqdwVwjt9yxU2jxpmKqH4kfA/edit?usp=sharing"><button id="guide-button" class="float-button">Getting Started Guide</button></a>
+
+                        <div class="clear-float-div">
+
+                        </div>
+
+                    </div>
+                    <script type="text/javascript">
+                        $("#intro-button").click(function() {
+                            $("#intro-text-container").slideToggle("slow");
+
+                            if ($("#intro-button").text() == 'Short Introduction') {
+                                $("#intro-button").text("Close Introduction");
+                            } else {
+                                $("#intro-button").text("Short Introduction");
+                            }
+                        });
+                    </script>
+                </div>
+
+
+                <!-- Post section -->
+                <div id="post-challenge">
+
+                    <!-- Postbutton -->
+                    <div class="dropdown-container">
+
+                        <div class="button-container">
+                            <button class="dropdown-button" id="post-button">Post Challenge</button>
+                        </div>
+
+                        <div class="dropdown-content-container" id="post-container">
+
+                            <!-- Title -->
+                            <p id="fantom-padding">
+                            </p>
+
+                            <h3 id="post-title">Create Your Challenge</h3>
+
+                            <!-- Description (input string) -->
+                            <div id="description-container" class="user-input">
+                                <label for="user-description">Description:</label>
+                                <input type="text" id="user-description"
+                                    placeholder=" A short description of my challenge..."
+                                    size="35"
+                                />
+                            </div>
+
+                            <!-- Result Location (input string) -->
+                            <div id="results-container" class="user-input">
+                                <label for="user-location">Results Location:</label>
+                                <input type="text" id="user-location"
+                                    placeholder=" www.exactUrlOfResults.com"
+                                    size="31"
+                                />
+                            </div>
+
+                            <!-- Type (dropdown) -->
+                            <div id="category-container" class="user-input">
+                                <select id="user-category">
+                                    <option value="">Select a category</option>
+                                    <option value="0">Social</option>
+                                    <option value="1">Health</option>
+                                    <option value="2">Learning</option>
+                                    <option value="3">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Submit button -->
+                            <div id="submit-container">
+                                <button>Submit</button>
+                            </div>
+
+                            <div class="clear-float-div">
+
+
+                            <script type="text/javascript">
+                                $("#submit-container button").click(function() {
+                                    postChallenge();
+                                });
+                            </script>
+
+
+                        </div>
+
+                        </div>
+                        <script type="text/javascript">
+                            $("#post-button").click(function() {
+                                $("#post-container").slideToggle("slow");
+                            });
+                        </script>
+
+
+                    </div>
+
+                <!-- End post-challenge -->
+                </div>
+
+
+                <!-- Search section -->
+                <div id="search-challenge">
+
+                    <!-- Title -->
+                    <h3 id="search-title">Community's Challenges</h3>
+
+                    <!-- Results container -->
+                    <div id='search-results-container'>
+
+                        <div id="log-container"></div> <!-- Hidden by default -->
+
+                        <div id="no-more-results-category"> <!-- Hidden by default -->
+                            <p>Search complete</p>
+                        </div>
+
+                        <div id="searching-blockchain"> <!-- Shown by default -->
+                              <p>Scanning the Ethereum blockchain for challenges...</p>
+                              <div id="spinner"></div>
+                        </div>
+
+                        <div id="loadmore-button"> <!-- Hidden by default -->
+                            <button id="loadmore-text">Load more</button>
+                        </div>
+                        <script type="text/javascript">
+                            $(".loadmore-button").click(function() {
+                                loadmoreButton();
+                            });
+                        </script>
+
+                    </div>
+                </div> <!-- End search-challenge -->
+            </div> <!-- End Content -->
+        </div> <!-- End content-inside -->
+    </div> <!-- End content-outside -->
+
+    <footer>
+        <div id="copyright-container">
+            <a href="http://www.tedslocum.com">&copy sted9000</a>
+        </div>
+    </footer>
+</body>
