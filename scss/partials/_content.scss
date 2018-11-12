@@ -5,65 +5,10 @@
 
 // Default button format ...........................
 button {
-    font-family: 'Merriweather', serif;
-    cursor: pointer;
     border-radius: 2em;
-
-    &:focus {
-        outline: 0;
-    }
 }
 
-// Intro and Post dropdown section ................
-.dropdown-container {
-	text-align: center;
-    margin-top: 10px;
 
-    .dropdown-button {
-        width: 400px;
-        background-color: black;
-        border: none;
-        color: white;
-        padding: 15px 25px;
-        box-shadow: 1px 1px 10px rgba(0,0,0,.2);
-        font-size: 1.1em;
-
-        &:hover {
-            background-color: white;
-            color: black;
-        }
-    }
-
-    .dropdown-content-container {
-        display: none;
-        max-width: 400px;
-        margin: 5px auto 5px;
-        box-shadow: 1px 1px 10px rgba(0,0,0,.2);
-        border-radius: 1em;
-
-        p {
-            padding: 10px;
-            margin: 0px;
-        }
-
-        .float-button {
-            background-color: $grey-btn;
-            color: black;
-            padding: 10px;
-            border-radius: 1em;
-            box-shadow: 1px 1px 5px rgba(0,0,0,.2);
-            border-width: 0;
-            float: left;
-            width: 45%;
-            margin: 2.5%;
-
-            &:hover {
-                background-color: white;
-                color: black;
-            }
-        }
-    }
-}
 
 // Modifications for post container
 #post-challenge {

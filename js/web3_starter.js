@@ -8,30 +8,42 @@ window.addEventListener('load', async () => {
 
     // If yes get the account access
     } else {
+        // *** Pattern for sites which need account address access **************
+        // // Modern dapp browsers...
+        // if (window.ethereum) {
+        //
+        //     window.web3 = new Web3(ethereum);
+        //
+        //     try {
+        //         // Request account access if needed
+        //         await ethereum.enable();
+        //
+        //         checkNetwork();
+        //
+        //     } catch (error) {
+        //         // throw err message
+        //         $('body').addClass('error-no-account-access').addClass('error');
+        //     }
+        // // Legacy dapp browsers...
+        // } else if (window.web3) {
+        //     window.web3 = new Web3(web3.currentProvider);
+        //
+        //     // Call network check
+        //     checkNetwork();
+        // }
+        //*************************************************************************
 
-        // Modern dapp browsers...
+        // *** Pattern for stites which do NOT need account address access ********
         if (window.ethereum) {
             window.web3 = new Web3(ethereum);
-            try {
-                // Request account access if needed
-                await ethereum.enable();
-
-                checkNetwork();
-
-            } catch (error) {
-                // throw err message
-                $('body').addClass('error-no-account-access').addClass('error');
-            }
-
-
-
-        // Legacy dapp browsers...
-        } else if (window.web3) {
-            window.web3 = new Web3(web3.currentProvider);
-
-            // Call network check
             checkNetwork();
         }
+        else if (window.web3) {
+            window.web3 = new Web3(web3.currentProvider);
+            checkNetwork();
+        }
+
+        //**************************************************************************
 
         // Non-dapp browsers... (no metamask plugin)
         else {
