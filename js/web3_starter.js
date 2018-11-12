@@ -17,8 +17,8 @@ window.addEventListener('load', async () => {
         //     try {
         //         // Request account access if needed
         //         await ethereum.enable();
-        //
-        //         checkNetwork();
+        //         var accountAddressNeeded = true;
+        //         checkNetwork(accountAddressNeeded);
         //
         //     } catch (error) {
         //         // throw err message
@@ -29,18 +29,20 @@ window.addEventListener('load', async () => {
         //     window.web3 = new Web3(web3.currentProvider);
         //
         //     // Call network check
-        //     checkNetwork();
+    //         var accountAddressNeeded = true;
+        //     checkNetwork(accountAddressNeeded);
         // }
         //*************************************************************************
 
         // *** Pattern for stites which do NOT need account address access ********
         if (window.ethereum) {
             window.web3 = new Web3(ethereum);
-            checkNetwork();
+            var accountAddressNeeded = false
+            checkNetwork(accountAddressNeeded);
         }
         else if (window.web3) {
             window.web3 = new Web3(web3.currentProvider);
-            checkNetwork();
+            checkNetwork(accountAddressNeeded);
         }
 
         //**************************************************************************
@@ -52,7 +54,7 @@ window.addEventListener('load', async () => {
     }
 });
 
-function checkNetwork() {
+function checkNetwork(_accountAddressNeeded) {
 
     // Network check; else throw error
     web3.version.getNetwork((err, netId) => {
@@ -61,7 +63,7 @@ function checkNetwork() {
         case "1":
           console.log('This is mainnet');
           // Case account check
-          accountCheck();
+          accountCheck(_accountAddressNeeded);
           break
         case "2":
           console.log('This is the deprecated Morden test network.');
@@ -86,19 +88,27 @@ function checkNetwork() {
   });
 }
 
-function accountCheck() {
+function accountCheck(_accountAddressNeeded) {
     window.web3.eth.getAccounts((err, acc) => {
 
         if (!err) {
             console.log('here in accountcheck');
+            console.log('accountAddressNeeded: ' + _accountAddressNeeded);
 
-            if (acc.length <= 0) {
-                $('body').addClass('error-no-metamask-accounts').addClass('error');
+            if (_accountAddressNeeded) {
 
-            } else {
-                web3.eth.defaultAccount = web3.eth.accounts[0];
-                console.log("Active account: " + web3.eth.defaultAccount);
-                // Call set abi
+                if (acc.length <= 0) {
+                    $('body').addClass('error-no-metamask-accounts').addClass('error');
+
+                } else {
+                    web3.eth.defaultAccount = web3.eth.accounts[0];
+                    console.log("Active account: " + web3.eth.defaultAccount);
+                    // Call set abi
+                    getLastestBlock();
+                }
+            }
+            else {
+                console.log('No account address needed');
                 getLastestBlock();
             }
 
