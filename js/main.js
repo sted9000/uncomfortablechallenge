@@ -41,25 +41,88 @@ function postChallenge() {
     }
 
     // web3 transaction
-    factoryInstance.newChallenge.sendTransaction(
-        category, description, location, function(err, txHash){
-        if(!err) {
+    try { // See if user is connected
+        factoryInstance.newChallenge.sendTransaction(
+            category, description, location, function(err, txHash){
+            if(!err) {
 
-            // give user the transaction hash
-            alert('Your challenge has been submitted to the blockchain' + '\n' +
-            'Your transaction hash is: ' +
-            txHash);
+                // give user the transaction hash
+                alert('Your challenge has been submitted to the blockchain' + '\n' +
+                'Your transaction hash is: ' +
+                txHash);
 
-            // clear user inputs
-            $("#user-category")[0].value = ""; // clear category
-            $('#user-description')[0].value = ""; // clear description
-            $('#user-location')[0].value = ""; // clear result
-            console.log(txHash);
+                // clear user inputs
+                $("#user-category")[0].value = ""; // clear category
+                $('#user-description')[0].value = ""; // clear description
+                $('#user-location')[0].value = ""; // clear result
+                console.log(txHash);
 
-        } else {
-            console.log(err);
+            } else {
+                console.log(err);
+            }
+        }); // End web3 transaction
+    }
+
+    catch { // Get account address from metamask
+
+        // Modern dapp browsers...
+        if (window.ethereum) {
+
+            window.web3 = new Web3(ethereum);
+
+            try {
+                // Request account access if needed
+                await ethereum.enable();
+                factoryInstance.newChallenge.sendTransaction(
+                    category, description, location, function(err, txHash){
+                    if(!err) {
+
+                        // give user the transaction hash
+                        alert('Your challenge has been submitted to the blockchain' + '\n' +
+                        'Your transaction hash is: ' +
+                        txHash);
+
+                        // clear user inputs
+                        $("#user-category")[0].value = ""; // clear category
+                        $('#user-description')[0].value = ""; // clear description
+                        $('#user-location')[0].value = ""; // clear result
+                        console.log(txHash);
+
+                    } else {
+                        console.log(err);
+                    }
+                }); // End web3 transaction
+
+
+            } catch (error) {
+                // throw err message
+                $('body').addClass('error-no-account-access').addClass('error');
+            }
+        // Legacy dapp browsers...
+        } else if (window.web3) {
+            window.web3 = new Web3(web3.currentProvider);
+            factoryInstance.newChallenge.sendTransaction(
+                category, description, location, function(err, txHash){
+                if(!err) {
+
+                    // give user the transaction hash
+                    alert('Your challenge has been submitted to the blockchain' + '\n' +
+                    'Your transaction hash is: ' +
+                    txHash);
+
+                    // clear user inputs
+                    $("#user-category")[0].value = ""; // clear category
+                    $('#user-description')[0].value = ""; // clear description
+                    $('#user-location')[0].value = ""; // clear result
+                    console.log(txHash);
+
+                } else {
+                    console.log(err);
+                }
+            }); // End web3 transaction
+
         }
-    }); // End web3 transaction
+    }
 } // End postChallenge()
 
 
