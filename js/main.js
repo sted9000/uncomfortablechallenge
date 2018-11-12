@@ -11,7 +11,7 @@ var queue = null; // logs gathered but not displayed
 // *** Main Functions ***
 // Post a Challenge Function
 // - Takes users inputs, checks them, and sends web3 transaction
-function postChallenge() {
+async postChallenge() {
 
     // format user inputs
     var category = $("#user-category")[0].value; // category
@@ -42,6 +42,7 @@ function postChallenge() {
 
     // web3 transaction
     try { // See if user is connected
+
         factoryInstance.newChallenge.sendTransaction(
             category, description, location, function(err, txHash){
             if(!err) {
