@@ -11,7 +11,7 @@ var queue = null; // logs gathered but not displayed
 // *** Main Functions ***
 // Post a Challenge Function
 // - Takes users inputs, checks them, and sends web3 transaction
-async postChallenge() {
+async function postChallenge() {
 
     // format user inputs
     var category = $("#user-category")[0].value; // category
